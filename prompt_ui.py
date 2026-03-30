@@ -5,3 +5,11 @@ from langchain_core.prompts import PromptTemplate,load_prompt
 
 load_dotenv()
 model = ChatOpenAI()
+
+st.header('Research Tool')
+
+user_input = st.text_input('Enter your prompt')
+
+if st.button('Summarize'):
+    result = model.invoke(user_input)
+    st.write(result.content)
